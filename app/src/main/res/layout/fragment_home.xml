@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f7ffdd"
+    android:weightSum="10"
+    tools:context=".HomeNav">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        >
+
+
+
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:layout_weight="8"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:padding="14dp"
+        android:rowCount="3"
+
+        >
+        <!--card one-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#d0e3cc">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ot_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/convergence"
+                    android:text="Open Tickets"
+                    android:textSize="28dp"
+                    android:textColor="#2e4057"
+                    android:gravity="center"></TextView>
+
+
+                <Button
+                    android:id="@+id/openticket_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#b1cf5f"
+                    android:layout_marginTop="15dp"
+                    android:text="VIEW ALL"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/convergence"></Button>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--card two-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#d0e3cc">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ct_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/convergence"
+                    android:text="Closed Tickets"
+                    android:textSize="28dp"
+                    android:textColor="#2e4057"
+                    android:gravity="center"></TextView>
+
+
+                <Button
+                    android:id="@+id/closedticket_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#b1cf5f"
+                    android:layout_marginTop="15dp"
+                    android:text="VIEW ALL"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/convergence"></Button>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--card three-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#d0e3cc">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pt_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/convergence"
+                    android:text="Pending Tickets"
+                    android:textSize="28dp"
+                    android:textColor="#2e4057"
+                    android:gravity="center"></TextView>
+
+
+                <Button
+                    android:id="@+id/pendingticket_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#b1cf5f"
+                    android:layout_marginTop="15dp"
+                    android:text="VIEW ALL"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/convergence"></Button>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--card four-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#d0e3cc">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bt_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/convergence"
+                    android:text="Banned Users"
+                    android:textSize="28dp"
+                    android:textColor="#2e4057"
+                    android:gravity="center"></TextView>
+
+
+                <Button
+                    android:id="@+id/bannedusers_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#b1cf5f"
+                    android:layout_marginTop="15dp"
+                    android:text="VIEW ALL"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/convergence"></Button>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--card five-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#d0e3cc">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dt_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/convergence"
+                    android:text="Delivery Tickets"
+                    android:textSize="28dp"
+                    android:textColor="#2e4057"
+                    android:gravity="center"></TextView>
+
+
+                <Button
+                    android:id="@+id/deliveryticket_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#b1cf5f"
+                    android:layout_marginTop="15dp"
+                    android:text="VIEW ALL"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/convergence"></Button>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--card six-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#d0e3cc">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vt_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/convergence"
+                    android:text="Vendor Tickets"
+                    android:textSize="28dp"
+                    android:textColor="#2e4057"
+                    android:gravity="center"></TextView>
+
+
+                <Button
+                    android:id="@+id/vendorticket_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="#b1cf5f"
+                    android:layout_marginTop="15dp"
+                    android:text="VIEW ALL"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/convergence"></Button>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </GridLayout>
+
+</LinearLayout>
