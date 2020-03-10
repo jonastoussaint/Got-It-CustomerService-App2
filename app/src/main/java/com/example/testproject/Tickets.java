@@ -13,7 +13,7 @@ public class Tickets extends ParseObject {
     public static final String KEY_DATE="createdAt";
     public static final String KEY_TYPE="sup_complainant_type";
     public static final String KEY_STATUS="sup_status";
-
+    //tickets class
     public String getKeyObjid(){
         return getString(KEY_TICKETID);
     }

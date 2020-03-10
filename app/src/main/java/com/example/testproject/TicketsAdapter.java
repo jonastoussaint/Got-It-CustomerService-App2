@@ -67,7 +67,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
         private ConstraintLayout container;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-
+//ticketadapter class
             ticketNum = itemView.findViewById(R.id.ticketNum_lbl);
             ticketDate = itemView.findViewById(R.id.ticketDate_lbl);
             ticketType = itemView.findViewById(R.id.ticketType);
