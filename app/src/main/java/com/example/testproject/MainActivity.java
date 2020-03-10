@@ -30,7 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
         signin = findViewById(R.id.button);
 
-        etxtUsername = findViewById(R.id.username);
+        //using just for testing purposes | delete when done :)
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HomeNav.class);
+                startActivity(intent);
+            }
+        });
+        //using just for testing purposes | deleting stops here :)
+
+       /* etxtUsername = findViewById(R.id.username);
         etxtPassword = findViewById(R.id.password);
 
         signin.setOnClickListener(new View.OnClickListener() {
@@ -41,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 validateUser(username, password);
 
                 Intent intent = new Intent(MainActivity.this, HomeNav.class);
-                startActivity(intent);
+                startActivity(intent)
             }
-        });
+        });*/
     }
 
     private void validateUser(String username, String password) {

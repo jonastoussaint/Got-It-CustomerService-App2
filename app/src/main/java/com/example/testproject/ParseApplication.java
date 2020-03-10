@@ -10,7 +10,7 @@ public class ParseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        ParseObject.registerSubclass(Tickets.class);
         Parse.initialize(new Parse.Configuration.Builder(this).applicationId("cjones-parse-server")
                 .clientKey("Grayson2015")
                 .server("https://parse-server-example-cjones.herokuapp.com/parse")
