@@ -6,20 +6,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testproject.MainActivity;
 import com.example.testproject.R;
+import com.example.testproject.Tickets;
+import com.example.testproject.TicketsAdapter;
+
+import java.util.List;
+
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    protected RecyclerView rView;
+    protected TicketsAdapter adapter;
+    protected List<Tickets> taskTickets;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,20 +38,19 @@ public class HomeFragment extends Fragment {
         openticketbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                /*Fragment fragment = new Fragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.mainContainer, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();*/
+                Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
+
             }
         });
 
-
-        //Don't need this stuff
-      /*  final TextView textView = root.findViewById(R.id.);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
         return root;
     }
+
 }

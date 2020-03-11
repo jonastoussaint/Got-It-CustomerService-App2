@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button signin;
     private EditText etxtUsername, etxtPassword;
-
+    private String id = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         signin = findViewById(R.id.button);
 
-        //using just for testing purposes | delete when done :)
+      /*  //using just for testing purposes | delete when done :)
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //using just for testing purposes | deleting stops here :)
+        //using just for testing purposes | deleting stops here :) */
 
-       /* etxtUsername = findViewById(R.id.username);
+        etxtUsername = findViewById(R.id.username);
         etxtPassword = findViewById(R.id.password);
 
         signin.setOnClickListener(new View.OnClickListener() {
@@ -50,37 +50,43 @@ public class MainActivity extends AppCompatActivity {
                 String password = etxtPassword.getText().toString();
                 validateUser(username, password);
 
-                Intent intent = new Intent(MainActivity.this, HomeNav.class);
-                startActivity(intent)
+
             }
-        });*/
+        });
     }
 
     private void validateUser(String username, String password) {
 
+
         //Query to check user input against object (username)
         ParseQuery<ParseObject> userQuery = ParseQuery.getQuery("InternalUser");
         userQuery.whereEqualTo("inu_username", username);
+        userQuery.whereEqualTo("inu_password", password);
 
         //Query to check user input against object (password)
-        ParseQuery<ParseObject> pwordQuery = ParseQuery.getQuery("InternalUser");
-        pwordQuery.whereEqualTo("inu_password", password);
+        //ParseQuery<ParseObject> pwordQuery = ParseQuery.getQuery("InternalUser");
+        //pwordQuery.whereEqualTo("inu_password", password);
 
         //Do compound query to validate both username AND password for a specific object
-        List<ParseQuery<ParseObject>> queries = new ArrayList<>();
-        queries.add(userQuery);
-        queries.add(pwordQuery);
-        ParseQuery<ParseObject> mainQuery = ParseQuery.or(queries);
-        mainQuery.findInBackground(new FindCallback<ParseObject>() {
+        //List<ParseQuery<ParseObject>> queries = new ArrayList<>();
+        //queries.add(userQuery);
+        //queries.add(pwordQuery);
+        //ParseQuery<ParseObject> mainQuery = ParseQuery.or(queries);
+        userQuery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> results, ParseException e) {
                 if (e == null) {
                     Log.d("users", "Retrieved " + results.size() + " users");
+
                     if(results.size() == 0)
                     {
                         Toast.makeText(MainActivity.this, "Invalid user credentials", Toast.LENGTH_SHORT).show();
+                        //return;
                     }
-                    else
+                   else {
+                        id = results.get(0).getObjectId();
                         HomeNav();
+                    }
+
 
                 } else {
                     Log.d("users", "Error: " + e.getMessage());
@@ -88,11 +94,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private void HomeNav() {
-        Intent i = new Intent(MainActivity.this, HomeNav.class);
-        startActivity(i);
+        Log.d("id", id);
+        Intent intent = new Intent(MainActivity.this, HomeNav.class);
+        intent.putExtra("username", id);
+        startActivity(intent);
+
         //finish();
     }
 }

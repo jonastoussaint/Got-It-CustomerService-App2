@@ -1,6 +1,7 @@
 package com.example.testproject.ui.gallery;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.example.testproject.Tickets;
 import com.example.testproject.TicketsAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
@@ -51,7 +53,19 @@ public class GalleryFragment extends Fragment {
         rView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
+
+        //query for only open tickets
+        Bundle extra = getActivity().getIntent().getExtras();
+        Log.d("bundle", extra.getString("username"));
+        String user = extra.getString("username");
+
         ParseQuery<Tickets> query = ParseQuery.getQuery("SupportTicket");
+
+        //Below are the attempts to query
+        //query.include("inu_id");
+        // query.include("InternalUser.inu_username");
+        //query.whereEqualTo("InternalUser.objectId", user);
+
         query.findInBackground(new FindCallback<Tickets>() {
             @Override
             public void done(List<Tickets> tickets, ParseException e) {

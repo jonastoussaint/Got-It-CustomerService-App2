@@ -67,7 +67,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
         private ConstraintLayout container;
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-//ticketadapter class
+
             ticketNum = itemView.findViewById(R.id.ticketNum_lbl);
             ticketDate = itemView.findViewById(R.id.ticketDate_lbl);
             ticketType = itemView.findViewById(R.id.ticketType);
@@ -77,12 +77,11 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
            container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context , MainActivity.class);
-                    intent.putExtra("ticket", (Parcelable) ticketNum);
+                    Tickets ticket = new Tickets();
+                    Intent intent = new Intent(context , ResolveTicket.class);
+                    String tick = ticketNum.getText().toString().replace("Ticket Number: ", "");
+                    intent.putExtra("ticket", tick);
                     context.startActivity(intent);
-                    //RestaurantDeal.myBundle.putString("restaurant_id", hid.getText().toString());
-                    //Fragment fragment = new DealsFragment();
-
                 }
             });
         }
