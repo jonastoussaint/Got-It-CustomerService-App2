@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ParseQuery<ParseObject> userQuery = ParseQuery.getQuery("InternalUser");
         userQuery.whereEqualTo("inu_username", username);
         userQuery.whereEqualTo("inu_password", password);
+        userQuery.whereEqualTo("inu_type", "CustomerService");
 
         //Query to check user input against object (password)
         //ParseQuery<ParseObject> pwordQuery = ParseQuery.getQuery("InternalUser");
