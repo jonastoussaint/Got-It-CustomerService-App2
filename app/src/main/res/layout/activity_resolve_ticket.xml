@@ -22,32 +22,18 @@
         app:layout_constraintTop_toBottomOf="@+id/ticketType" />
 
     <TextView
-        android:id="@+id/tn_lbl5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/convergence"
-        android:text="Ticket Complaint:"
-        android:textColor="@color/navy"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ticketDesc" />
-
-    <TextView
         android:id="@+id/tn_lbl6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/convergence"
         android:text="Ticket Resolution:"
         android:textColor="@color/navy"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ticketComplaint" />
+        app:layout_constraintTop_toBottomOf="@+id/ticketDesc" />
 
     <TextView
         android:id="@+id/ts_lbl2"
@@ -131,23 +117,12 @@
         android:layout_marginLeft="33dp"
         android:background="#ffffff"
         android:ems="10"
+        android:enabled="false"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="@color/navy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tt_lbl3" />
-
-    <EditText
-        android:id="@+id/ticketComplaint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:background="#ffffff"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tn_lbl5" />
 
     <Button
         android:id="@+id/btnResolve"
@@ -160,15 +135,16 @@
         android:fontFamily="@font/convergence"
         android:text="SUBMIT"
         android:textColor="@color/navy"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ticketSolution" />
 
     <EditText
         android:id="@+id/ticketSolution"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
+        android:layout_width="316dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:background="#ffffff"
         android:ems="10"
         android:gravity="start|top"
@@ -184,8 +160,10 @@
         android:layout_marginLeft="33dp"
         android:background="#ffffff"
         android:ems="10"
+        android:enabled="false"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:textColor="@color/navy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tn_lbl4" />
 

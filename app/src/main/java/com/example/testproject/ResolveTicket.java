@@ -31,7 +31,6 @@ public class ResolveTicket extends AppCompatActivity {
         final TextView tickStatus = findViewById(R.id.txtStatus);
         final TextView tickType = findViewById(R.id.ticketType);
         final TextView tickDecription = findViewById(R.id.ticketDesc);
-        final TextView tickComplaint = findViewById(R.id.ticketComplaint);
         final TextView ticketSolution = findViewById(R.id.ticketSolution);
         final Button btnResolve = findViewById(R.id.btnResolve);
 
@@ -51,7 +50,6 @@ public class ResolveTicket extends AppCompatActivity {
                     tickStatus.setText(tickets.get(0).getStatus());
                     tickType.setText(tickets.get(0).getType());
                     tickDecription.setText(tickets.get(0).getDescription());
-                    tickComplaint.setText(tickets.get(0).getComplaint());
                     ticketSolution.setText(tickets.get(0).getResolution());
 
                 }else {
@@ -78,11 +76,9 @@ public class ResolveTicket extends AppCompatActivity {
                             ticket.saveInBackground();
 
                             //show display message of saved changes
-                            Toast toast = Toast.makeText(getApplicationContext(),"Ticket Successfully Resolved", Toast. LENGTH_LONG);
+                            Toast toast = Toast.makeText(getApplicationContext(),"Ticket Successfully Submitted", Toast. LENGTH_LONG);
                             toast.show();
 
-                            Intent intent = new Intent(getApplicationContext(), GalleryFragment.class);
-                            startActivity(intent);
                         }
                         else{
                             Toast toast = Toast.makeText(getApplicationContext(),"Unable to resolve ticket", Toast. LENGTH_LONG);

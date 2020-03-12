@@ -66,6 +66,8 @@ public class GalleryFragment extends Fragment {
         // query.include("InternalUser.inu_username");
         //query.whereEqualTo("InternalUser.objectId", user);
 
+        //sort by the latest one updated
+        query.orderByAscending("updatedAt");
         query.findInBackground(new FindCallback<Tickets>() {
             @Override
             public void done(List<Tickets> tickets, ParseException e) {
