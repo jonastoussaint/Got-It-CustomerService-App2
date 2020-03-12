@@ -77,6 +77,7 @@ public class ResolveTicket extends AppCompatActivity {
                             //save info back to the database
                             ticket.saveInBackground();
 
+                            //show display message of saved changes
                             Toast toast = Toast.makeText(getApplicationContext(),"Ticket Successfully Resolved", Toast. LENGTH_LONG);
                             toast.show();
 
