@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private Button signin;
     private EditText etxtUsername, etxtPassword;
     private String id = null;
+   // private String userName = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         signin = findViewById(R.id.button);
 
-      /*  //using just for testing purposes | delete when done :)
+    /*    //using just for testing purposes | delete when done :)
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //using just for testing purposes | deleting stops here :) */
+        //using just for testing purposes | deleting stops here :)*/
 
         etxtUsername = findViewById(R.id.username);
         etxtPassword = findViewById(R.id.password);
@@ -87,9 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         id = results.get(0).getObjectId();
                         HomeNav();
                     }
-
-
-                } else {
+           } else {
                     Log.d("users", "Error: " + e.getMessage());
                     Toast.makeText(MainActivity.this, "Invalid user credentials", Toast.LENGTH_SHORT).show();
                 }
@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("id", id);
         Intent intent = new Intent(MainActivity.this, HomeNav.class);
         intent.putExtra("username", id);
+        String userName = etxtUsername.getText().toString();
+        intent.putExtra("internalUserName", userName);
         startActivity(intent);
 
         //finish();

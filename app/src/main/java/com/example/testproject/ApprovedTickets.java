@@ -32,7 +32,7 @@ public class ApprovedTickets extends AppCompatActivity {
         rView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
 
 
-
+        //query for approved tickets
         ParseQuery<Tickets> query = ParseQuery.getQuery("SupportTicket");
         query.whereEqualTo("sup_status", "Approved");
         query.findInBackground(new FindCallback<Tickets>() {

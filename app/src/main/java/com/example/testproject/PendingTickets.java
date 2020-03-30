@@ -31,7 +31,7 @@ public class PendingTickets extends AppCompatActivity {
         rView.setAdapter(adapter);
         rView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
 
-
+        //pending
 
         ParseQuery<Tickets> query = ParseQuery.getQuery("SupportTicket");
         query.whereEqualTo("sup_status", "Pending approval");

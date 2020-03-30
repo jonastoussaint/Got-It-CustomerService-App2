@@ -36,7 +36,8 @@ public class OpenTickets extends AppCompatActivity {
         rView.setLayoutManager(new LinearLayoutManager(getBaseContext()));
 
 
-        //query for opened tickets
+        //query for opened ticket
+
         ParseQuery<Tickets> query = ParseQuery.getQuery("SupportTicket");
         query.whereEqualTo("sup_status", "Open");
         query.findInBackground(new FindCallback<Tickets>() {

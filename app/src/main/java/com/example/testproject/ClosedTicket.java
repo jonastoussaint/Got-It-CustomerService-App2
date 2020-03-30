@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClosedTicket extends AppCompatActivity {
-
+//closed ticket dashboard button
     protected RecyclerView rView;
     protected TicketsAdapter adapter;
     protected List<Tickets> taskTickets;

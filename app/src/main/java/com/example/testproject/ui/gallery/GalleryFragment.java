@@ -3,8 +3,13 @@ package com.example.testproject.ui.gallery;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +32,7 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GalleryFragment extends Fragment {
+public class GalleryFragment extends Fragment  {
 
     private GalleryViewModel galleryViewModel;
     protected RecyclerView rView;
@@ -43,7 +48,7 @@ public class GalleryFragment extends Fragment {
 
         return root;
     }
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         rView = view.findViewById(R.id.recyclerView1);
         //vertical line
         rView.addItemDecoration(new DividerItemDecoration(rView.getContext(), DividerItemDecoration.VERTICAL));
@@ -53,7 +58,6 @@ public class GalleryFragment extends Fragment {
         rView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-
         //query for only open tickets
         Bundle extra = getActivity().getIntent().getExtras();
         Log.d("bundle", extra.getString("username"));
@@ -61,6 +65,8 @@ public class GalleryFragment extends Fragment {
 
         ParseQuery<Tickets> query = ParseQuery.getQuery("SupportTicket");
 
+        query.include("inu_idString");
+        query.whereEqualTo("inu_idString", user);
         //Below are the attempts to query
         //query.include("inu_id");
         // query.include("InternalUser.inu_username");
@@ -71,14 +77,39 @@ public class GalleryFragment extends Fragment {
         query.findInBackground(new FindCallback<Tickets>() {
             @Override
             public void done(List<Tickets> tickets, ParseException e) {
-                if(e == null){
+                if (e == null) {
                     adapter.clear();
                     adapter.addAll(tickets);
-                }else {
+                } else {
 
                 }
             }
         });
     }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
+        // TODO Add your menu entries here
+        inflater.inflate(R.menu.home_nav, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+        MenuItem searchItem = menu.findItem(R.id.searchV);
+        SearchView searchView = (SearchView)searchItem.getActionView();
+
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+        });
+    }
+
 
 }

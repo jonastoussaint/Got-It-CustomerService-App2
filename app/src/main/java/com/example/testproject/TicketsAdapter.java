@@ -7,6 +7,9 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,17 +20,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testproject.ui.gallery.GalleryFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHolder> {
+public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHolder> implements Filterable {
     private Context context;
     private List<Tickets> tickets;
-
+    private List<Tickets> ticketsFull;
 
     public TicketsAdapter(Context context, List<Tickets> tickets){
 
         this.context = context;
         this.tickets = tickets;
+        //make copy of list
+        ticketsFull = new ArrayList<>(tickets);
     }
 
     @NonNull
@@ -59,7 +65,45 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
         return tickets.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    @Override
+    public Filter getFilter(){
+        return exampleFilter;
+    }
+
+//Filter
+    private Filter exampleFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<Tickets> filteredList = new ArrayList<>();
+
+            if(charSequence == null  || charSequence.length() == 0){
+                filteredList.addAll(ticketsFull);
+            }else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for(Tickets item : ticketsFull){
+                    //filter for status
+                    if(item.getType().toLowerCase().contains(filterPattern)){
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values =filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            //clear the list and add searched contents only
+            tickets.clear();
+            tickets.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
+
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView ticketNum;
         private TextView ticketDate;
         private TextView ticketType;
@@ -92,5 +136,6 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
             ticketType.setText("Type: " + ticket.getType());
             ticketStatus.setText("Status: " + ticket.getStatus());
         }
+
     }
 }
