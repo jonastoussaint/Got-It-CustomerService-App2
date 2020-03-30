@@ -75,7 +75,7 @@
         android:enabled="false"
         android:inputType="textPersonName"
         android:shadowColor="@color/gray"
-        android:text="Name"
+
         android:textColor="@color/navy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Tn_lbl" />
@@ -91,7 +91,7 @@
         android:ems="10"
         android:enabled="false"
         android:inputType="textPersonName"
-        android:text="Name"
+
         android:textColor="@color/navy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/td_lbl" />
@@ -105,7 +105,7 @@
         android:background="#ffffff"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ts_lbl2" />
 
@@ -119,7 +119,7 @@
         android:ems="10"
         android:enabled="false"
         android:inputType="textPersonName"
-        android:text="Name"
+
         android:textColor="@color/navy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tt_lbl3" />

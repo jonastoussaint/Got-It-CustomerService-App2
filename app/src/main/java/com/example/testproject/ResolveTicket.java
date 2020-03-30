@@ -79,6 +79,10 @@ public class ResolveTicket extends AppCompatActivity {
                             Toast toast = Toast.makeText(getApplicationContext(),"Ticket Successfully Submitted", Toast. LENGTH_LONG);
                             toast.show();
 
+                            //take out
+                            Intent intent = new Intent(ResolveTicket.this, GalleryFragment.class);
+                            startActivity(intent);
+
                         }
                         else{
                             Toast toast = Toast.makeText(getApplicationContext(),"Unable to resolve ticket", Toast. LENGTH_LONG);
