@@ -20,11 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ApprovedTickets"></activity>
-        <activity android:name=".PendingTickets" />
-        <activity android:name=".ClosedTicket" />
+        <activity android:name=".ResolveTicket"></activity>
         <activity android:name=".OpenTickets" />
-        <activity android:name=".ResolveTicket" />
         <activity
             android:name=".HomeNav"
             android:label="@string/title_activity_home_nav"
