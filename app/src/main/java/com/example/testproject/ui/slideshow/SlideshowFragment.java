@@ -72,7 +72,7 @@ public class SlideshowFragment extends Fragment {
                             //puts data back into the database but not updating the existing row!!
                             object.get(0).put("inu_first_name",iufName.getText().toString());
                             object.get(0).put("inu_last_name",iulName.getText().toString());
-                            object.get(0).saveInBackground();//<-- IDK why a took me a to figure that out
+                            object.get(0).saveInBackground();//<-- IDK why a took me so long to figure that out smh
 
                         }
                     });
