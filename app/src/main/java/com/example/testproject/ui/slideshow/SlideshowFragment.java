@@ -72,10 +72,7 @@ public class SlideshowFragment extends Fragment {
                             //puts data back into the database but not updating the existing row!!
                             object.get(0).put("inu_first_name",iufName.getText().toString());
                             object.get(0).put("inu_last_name",iulName.getText().toString());
-                            /*query.put("inu_first_name", iufName.getText().toString());
-                            query.put("inu_last_name", iulName.getText().toString());*/
-
-
+                            object.get(0).saveInBackground();//<-- IDK why a took me a to figure that out
 
                         }
                     });
@@ -89,13 +86,4 @@ public class SlideshowFragment extends Fragment {
 
     }
 
-    //Ignore this
-       /* button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // query.
-                //query.put("inu_first_name", iufName.toString());
-            }
-        });
-    }*/
 }
