@@ -8,6 +8,46 @@
     tools:context=".ui.slideshow.SlideshowFragment">
 
     <TextView
+        android:id="@+id/txtIU5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="244dp"
+        android:fontFamily="@font/convergence"
+        android:text="Confirm Password"
+        android:textColor="@color/navy"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIULName" />
+
+    <TextView
+        android:id="@+id/txtIU2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/convergence"
+        android:text="Password"
+        android:textColor="@color/navy"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIULName" />
+
+    <EditText
+        android:id="@+id/txtIUPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="320dp"
+        android:ems="10"
+        android:inputType="textPersonName|textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIU" />
+
+    <TextView
         android:id="@+id/txtIUsername"
         android:layout_width="219dp"
         android:layout_height="50dp"
@@ -23,9 +63,9 @@
         android:id="@+id/btnChanges"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
-        android:layout_marginLeft="133dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="224dp"
         android:width="145dp"
         android:height="40dp"
         android:background="@color/green"
@@ -37,9 +77,9 @@
         android:id="@+id/txtIU"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="97dp"
-        android:layout_marginLeft="97dp"
-        android:layout_marginTop="118dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/convergence"
         android:text="First Name"
         android:textColor="@color/navy"
@@ -83,6 +123,18 @@
         android:layout_marginLeft="96dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtIU" />
+
+    <EditText
+        android:id="@+id/txtIUPassConf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="424dp"
+        android:ems="10"
+        android:inputType="textPersonName|textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtIU" />
 

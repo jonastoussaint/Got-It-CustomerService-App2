@@ -6,7 +6,7 @@ import com.parse.ParseClassName;
 public class InternalUser extends ParseObject
 {
 
-    private String  userID;
+    private String userID;
     private String Fname;
     private String Lname;
     private String type;

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -47,6 +48,8 @@ public class SlideshowFragment extends Fragment {
         final TextView iufName = view.findViewById(R.id.txtIUFName);
         final TextView iulName = view.findViewById(R.id.txtIULName);
         final TextView iuuName = view.findViewById(R.id.txtIUsername);
+        final TextView newPass = view.findViewById(R.id.txtIUPass);
+        final TextView newPassConf = view.findViewById(R.id.txtIUPassConf);
         final Button button = view.findViewById(R.id.btnChanges);
 
         //set the current username when user logged in
@@ -65,15 +68,29 @@ public class SlideshowFragment extends Fragment {
                     //set first and last name found in database
                     iufName.setText(object.get(0).getString("inu_first_name"));
                     iulName.setText(object.get(0).getString("inu_last_name"));
+                    newPassConf.setText(object.get(0).getString("inu_password"));
+                    newPass.setText(object.get(0).getString("inu_password"));
+
                     //update the database
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+
+                            //Confirm new passwords match beforee update
+                            if(newPassConf.getText().toString().equals(newPass.getText().toString())){
+                                object.get(0).put("inu_password", newPassConf.getText().toString());
+                                object.get(0).saveInBackground();
+                            }
+                            else{
+                                Toast.makeText(getActivity(),"Passwords do not match!",Toast.LENGTH_SHORT).show();
+                            }
                             //puts data back into the database but not updating the existing row!!
+                            //object.get(0).put("inu_password", newPassConf.getText().toString());
                             object.get(0).put("inu_first_name",iufName.getText().toString());
                             object.get(0).put("inu_last_name",iulName.getText().toString());
                             object.get(0).saveInBackground();//<-- IDK why a took me so long to figure that out smh
-
+                            //Toast Confirming Update
+                            Toast.makeText(getActivity(),"Changes saved!",Toast.LENGTH_SHORT).show();
                         }
                     });
 
