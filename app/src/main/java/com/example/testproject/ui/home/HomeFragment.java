@@ -19,6 +19,8 @@ import com.example.testproject.PendingTickets;
 import com.example.testproject.R;
 import com.example.testproject.Tickets;
 import com.example.testproject.TicketsAdapter;
+import com.example.testproject.DriverTickets;
+import com.example.testproject.VendorTickets;
 
 import java.util.List;
 
@@ -41,6 +43,9 @@ public class HomeFragment extends Fragment {
         final Button closedticketbtn = root.findViewById(R.id.closedticket_btn);
         final Button pendingticketbtn = root.findViewById(R.id.pendingticket_btn);
         final Button aprrovedticketbtn = root.findViewById(R.id.approvedtickets_btn);
+        final Button driverTicket= root.findViewById(R.id.deliveryticket_btn);
+        final Button customerTicket = root.findViewById(R.id.vendorticket_btn);
+
         //button for open tickets
         openticketbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +63,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
         //button for closed tickets
         closedticketbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +92,28 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent intent = new Intent(getContext(), ApprovedTickets.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //button for Delivery tickets
+        driverTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getContext(), DriverTickets.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //button for Delivery tickets
+        customerTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getContext(), VendorTickets.class);
                 startActivity(intent);
 
             }
